@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """ Index view
 """
-from flask import Blueprint, jsonify
+from flask import jsonify
 
-app_views = Blueprint('app_views', __name__)
+from api.v1.views.index import app_views
 
 
-@app_views.route('/status', methods=['GET'], strict_slashes=False)
+@app_views.route('/api/v1/status', methods=['GET'], strict_slashes=False)
 def status():
     """ Status of the web server
     """
     return jsonify({"status": "OK"})
-
