@@ -8,13 +8,6 @@ from flask import Flask, jsonify, make_response
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
-# Define route for /api/v1/status
-@app.route('/api/v1/status', methods=['GET'])
-def get_status():
-    """Return status of the API"""
-    return jsonify({"status": "OK"})
-
-
 @app.errorhandler(404)
 def not_found(error):
     """ json 404 page """
